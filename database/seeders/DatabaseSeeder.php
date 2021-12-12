@@ -10,6 +10,7 @@ use App\Models\Santri;
 use App\Models\Pengurus;
 use App\Models\Buku;
 use App\Models\DetailPeran;
+use App\Models\Kemajuan;
 use App\Models\Peran;
 use Faker\Factory as Faker;
 
@@ -55,6 +56,16 @@ class DatabaseSeeder extends Seeder
                 'bab' => $faker->text(50),
                 'judul' => $faker->text(100),
                 'keterangan' => $faker->sentence,
+            ]);
+        }
+
+        $santris = Santri::all();
+        foreach ($santris as $santri) {
+            Kemajuan::firstOrCreate([
+                'id_santri' => $santri->id_santri,
+                'id_pengurus' => $pengurus->id_pengurus,
+                'tanggal' => $faker->date,
+                'status' => $faker->randomElement(['Y', 'N'])
             ]);
         }
     }
