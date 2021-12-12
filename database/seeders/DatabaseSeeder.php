@@ -9,6 +9,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Santri;
 use App\Models\Pengurus;
 use App\Models\Buku;
+use App\Models\DetailKemajuan;
 use App\Models\DetailPeran;
 use App\Models\Kemajuan;
 use App\Models\Peran;
@@ -67,6 +68,18 @@ class DatabaseSeeder extends Seeder
                 'tanggal' => $faker->date,
                 'status' => $faker->randomElement(['Y', 'N'])
             ]);
+        }
+
+        $kemajuans = Kemajuan::all();
+        $babs = Bab::all();
+        foreach ($kemajuans as $kemajuan) {
+            foreach ($babs as $bab) {
+                DetailKemajuan::firstOrCreate([
+                    'id_kemajuan' => $kemajuan->id_kemajuan,
+                    'id_bab' => $bab->id_bab,
+                    'keterangan' => $faker->sentence
+                ]);
+            }
         }
     }
 }
