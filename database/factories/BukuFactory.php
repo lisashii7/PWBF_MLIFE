@@ -23,10 +23,9 @@ class BukuFactory extends Factory
     {
         return [
             'buku' => $this->faker->name,
-            'keterangan' =>$this->faker->sentence,
-            'penulis' =>$this->faker->name,
-            'tahun_terbit'=>$this->faker->date,
+            'keterangan' => $this->faker->sentence,
+            'penulis' => $this->faker->name,
+            'tahun_terbit' => $this->faker->date,
         ];
-
     }
 }

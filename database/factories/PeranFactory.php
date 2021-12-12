@@ -13,7 +13,7 @@ class PeranFactory extends Factory
      */
     public function definition()
     {
-        $status_aktif =$this->faker->randomElement(['Y', 'N']);
+        $status_aktif = $this->faker->randomElement(['Y', 'N']);
         return [
             'peran' => $this->faker->text(20),
             'aktif' => $status_aktif

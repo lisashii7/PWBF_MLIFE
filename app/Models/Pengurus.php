@@ -12,14 +12,10 @@ class Pengurus extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table="pengurus";
+    protected $table = "pengurus";
     protected $primaryKey = 'id_pengurus';
+
     protected $fillable = [
-        "nama_pengurus",
-        "gender",
-        "hp",
-        "email",
-        "password",
-        "aktif",
+        "nama_pengurus", "gender", "hp", "email", "password", "aktif",
     ];
 }
