@@ -30,6 +30,6 @@ class CreateDetailPeransTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_perans');
+        Schema::dropIfExists('detail_peran');
     }
 }
