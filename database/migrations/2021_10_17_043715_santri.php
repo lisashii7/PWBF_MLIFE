@@ -14,7 +14,7 @@ class Santri extends Migration
     public function up()
     {
         Schema::create('santri', function (Blueprint $table) {
-            $table->increments('id_santri');
+            $table->id('id_santri');
             $table->string('nama_santri');
             $table->string('gender');
             $table->date('tgl_lahir');

@@ -14,7 +14,7 @@ class Pengurus extends Migration
     public function up()
     {
         Schema::create('pengurus', function (Blueprint $table) {
-            $table->increments('id_pengurus');
+            $table->id('id_pengurus');
             $table->string('nama_pengurus');
             $table->string('gender');
             $table->string('hp');
