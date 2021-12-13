@@ -12,11 +12,17 @@ class DetailKemajuan extends Model
     protected $table = "detail_kemajuan";
     protected $primaryKey = "id_detail_kemajuan";
 
-    public function kemajuan() {
+    protected $fillable = [
+        'id_kemajuan', 'id_bab', 'keterangan'
+    ];
+
+    public function kemajuan()
+    {
         return $this->belongsTo(Kemajuan::class, 'id_kemajuan', 'id_kemajuan');
     }
 
-    public function bab() {
+    public function bab()
+    {
         return $this->belongsTo(Bab::class, 'id_bab', 'id_bab');
     }
 }
