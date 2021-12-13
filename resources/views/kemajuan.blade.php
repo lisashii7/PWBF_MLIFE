@@ -73,6 +73,13 @@
           <p>Pengurus : {{ $kemajuan->pengurus->nama_pengurus }}</p>
           <p>Tanggal : {{ $kemajuan->tanggal }}</p>
           <p>Status : {{ $kemajuan->status }}</p>
+
+          {{-- detail kemajuan --}}
+          @foreach ($kemajuan->detail_kemajuan as $detail)
+          <p>Judul Buku : {{ $detail->bab->buku->buku }}</p>
+          <p>Bab : {{ $detail->bab->bab }}</p>
+          <p>Keterangan : {{ $detail->keterangan }}</p>
+          @endforeach
         </div>
       </div>
     </div>
