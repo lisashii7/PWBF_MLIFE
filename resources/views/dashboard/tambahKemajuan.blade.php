@@ -58,7 +58,7 @@
                     </div>
                     @endif
 
-                    <form method="POST" action="/dashboard/santri/tambah">
+                    <form method="POST" action="/dashboard/kemajuan/tambah">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
