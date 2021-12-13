@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\BukuController;
 use App\Http\Controllers\Dashboard\PengurusController;
 use App\Http\Controllers\Dashboard\LoginController;
 use App\Http\Controllers\KemajuanController;
+use App\Models\Kemajuan;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,10 @@ Route::get('/pengurus', function () {
     return view('pengurus',['data'=>$pengurus]);
 });
 
-Route::get('/kemajuan', [KemajuanController::class, 'index']);
+Route::get('/kemajuan', function() {
+    $data['kemajuans'] = Kemajuan::all();
+    return view('kemajuan', $data);
+});
 
 Route::get('/login', function () {
     return view('/dashboard/login');
@@ -67,6 +71,8 @@ Route::get('/dashboard/santri/hapus/{id}',[SantriController::class,'hapus']);
 Route::post('/dashboard/santri/tambah',[SantriController::class,'tambah']);
 Route::get('/dashboard/santri/form/{id}',[SantriController::class,'showFormUpdate']);
 Route::post('/dashboard/santri/update/{id}', [SantriController::class, 'update']);
+
+Route::get('/dashboard/kemajuan', [KemajuanController::class, 'index']);
 
 
 Route::get('/dashboard/buku',[BukuController::class,'index']);

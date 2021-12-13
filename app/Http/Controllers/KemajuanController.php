@@ -10,7 +10,7 @@ class KemajuanController extends Controller
     public function index()
     {
         $data['kemajuans'] = Kemajuan::all();
-        return view('kemajuan', $data);
+        return view('dashboard.kemajuan', $data);
     }
 
     public function create()
