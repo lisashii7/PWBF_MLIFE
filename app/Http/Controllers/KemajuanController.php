@@ -44,4 +44,16 @@ class KemajuanController extends Controller
             dd($err->errorInfo);
         }
     }
+
+    public function showFormUpdate($id)
+    {
+        $data['santris'] = Santri::all();
+        $data['pengurus'] = Pengurus::all();
+        $data['kemajuan'] = Kemajuan::where('id_kemajuan', $id)->first();
+        if ($data['kemajuan'] == null) {
+            return redirect("dashboard/kemajuan");
+        }
+
+        return view("dashboard/updateKemajuan", $data);
+    }
 }
