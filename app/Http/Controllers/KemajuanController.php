@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kemajuan;
+use App\Models\Pengurus;
+use App\Models\Santri;
 use Illuminate\Http\Request;
 
 class KemajuanController extends Controller
@@ -13,39 +15,10 @@ class KemajuanController extends Controller
         return view('dashboard.kemajuan', $data);
     }
 
-    public function create()
-    {
-        //
-    }
+    public function showFormTambah() {
+        $data['santris'] = Santri::all();
+        $data['pengurus'] = Pengurus::all();
 
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('dashboard.tambahKemajuan', $data);
     }
 }
