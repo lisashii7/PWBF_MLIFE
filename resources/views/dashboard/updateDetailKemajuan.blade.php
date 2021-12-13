@@ -58,7 +58,7 @@
                     </div>
                     @endif
 
-                    <form method="POST" action="/dashboard/detailKemajuan/update/{{ $detailKemajuan->id_kemajuan }}">
+                    <form method="POST" action="/dashboard/detailKemajuan/update/{{ $detailKemajuan->id_detail_kemajuan }}">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">

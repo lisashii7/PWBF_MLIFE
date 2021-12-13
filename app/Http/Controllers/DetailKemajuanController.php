@@ -55,4 +55,31 @@ class DetailKemajuanController extends Controller
 
         return view("dashboard/updateDetailKemajuan", $data);
     }
+
+    public function update(Request $request, $id)
+    {
+        $validation = $request->validate([
+            "id_kemajuan" => ["required"],
+            "id_bab" => ["required"],
+            "keterangan" => ["required"],
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $detailKemajuan = DetailKemajuan::findOrFail($id);
+            $detailKemajuan->update($validation);
+            DB::commit();
+
+            return redirect("/dashboard/detailKemajuan");
+        } catch (QueryException $err) {
+            DB::rollback();
+            dd($err->errorInfo);
+        }
+    }
+
+    public function hapus($id)
+    {
+        DetailKemajuan::findOrFail($id)->delete();
+        return redirect('/dashboard/detailKemajuan');
+    }
 }
