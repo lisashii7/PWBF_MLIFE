@@ -56,4 +56,31 @@ class KemajuanController extends Controller
 
         return view("dashboard/updateKemajuan", $data);
     }
+
+    public function update(Request $request, $id)
+    {
+        $validation = $request->validate([
+            "id_santri" => ["required"],
+            "id_pengurus" => ["required"],
+            "tanggal" => ["required", "date"],
+            "status" => ["required", "in:Y,N"]
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $kemajuan = Kemajuan::findOrFail($id);
+            $kemajuan->update($validation);
+            DB::commit();
+
+            return redirect("/dashboard/kemajuan");
+        } catch (QueryException $err) {
+            DB::rollback();
+            dd($err->errorInfo);
+        }
+    }
+
+    public function hapus($id){
+        Kemajuan::findOrFail($id)->delete();
+        return redirect('/dashboard/kemajuan');
+    }
 }

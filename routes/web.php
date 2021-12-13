@@ -76,6 +76,8 @@ Route::get('/dashboard/kemajuan', [KemajuanController::class, 'index']);
 Route::get('/dashboard/kemajuan/form', [KemajuanController::class, 'showFormTambah']);
 Route::post('/dashboard/kemajuan/tambah', [KemajuanController::class, 'tambah']);
 Route::get('/dashboard/kemajuan/form/{id}', [KemajuanController::class, 'showFormUpdate']);
+Route::post('/dashboard/kemajuan/update/{id}', [KemajuanController::class, 'update']);
+Route::get('/dashboard/kemajuan/hapus/{id}', [KemajuanController::class, 'hapus']);
 
 Route::get('/dashboard/buku',[BukuController::class,'index']);
 Route::get('/dashboard/buku/hapus/{id}',[BukuController::class,'hapus']);
