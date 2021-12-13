@@ -11,7 +11,7 @@ use App\Http\Controllers\Dashboard\SantriController;
 use App\Http\Controllers\Dashboard\BukuController;
 use App\Http\Controllers\Dashboard\PengurusController;
 use App\Http\Controllers\Dashboard\LoginController;
-
+use App\Http\Controllers\KemajuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +46,8 @@ Route::get('/pengurus', function () {
     $pengurus = Pengurus::all();
     return view('pengurus',['data'=>$pengurus]);
 });
+
+Route::get('/kemajuan', [KemajuanController::class, 'index']);
 
 Route::get('/login', function () {
     return view('/dashboard/login');
@@ -84,6 +86,3 @@ Route::post('/dashboard/pengurus/update/{id}', [PengurusController::class, 'upda
 Route::get('/dashboard/logout', [LoginController::class, 'logout']);
 
 });
-
-
-
