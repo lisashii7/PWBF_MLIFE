@@ -11,4 +11,12 @@ class Kemajuan extends Model
 
     protected $table = "kemajuan";
     protected $primaryKey = "id_kemajuan";
+
+    public function santri() {
+        return $this->belongsTo(Santri::class, 'id_santri', 'id_santri');
+    }
+
+    public function pengurus() {
+        return $this->belongsTo(Pengurus::class, 'id_pengurus', 'id_pengurus');
+    }
 }
