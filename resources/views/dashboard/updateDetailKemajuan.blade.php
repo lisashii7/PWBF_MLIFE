@@ -47,39 +47,54 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <a href="/dashboard/detailKemajuan/form" class="btn btn-sm btn-primary mb-3">Tambah Data
-                                Detail Kemajuan</a>
-                            <table id="table_id" class="display">
-                                <thead>
-                                    <tr>
-                                        <th>ID Kemajuan</th>
-                                        <th>Bab</th>
-                                        <th>Keterangan</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($detailKemajuans as $detail)
-                                    <tr>
-                                        <td>{{ $detail->kemajuan->id_kemajuan }}</td>
-                                        <td>{{ $detail->bab->bab }}</td>
-                                        <td>{{ $detail->keterangan }}</td>
 
-                                        <td class="text-nowrap">
-                                            <a href="/dashboard/detailKemajuan/hapus/{{ $detail->id_detail_kemajuan }}"
-                                                class="btn btn-danger btn-sm">Hapus</a>
-                                            <a href="/dashboard/detailKemajuan/form/{{ $detail->id_detail_kemajuan }}"
-                                                class="btn btn-warning btn-sm">Edit</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                    @endif
 
+                    <form method="POST" action="/dashboard/detailKemajuan/update/{{ $detailKemajuan->id_kemajuan }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="kemajuan">ID Kemajuan</label>
+                                    <select class="form-control" id="id_kemajuan" name="id_kemajuan" required>
+                                        <option value=""></option>
+                                        @foreach ($kemajuans as $kemajuan)
+                                        <option value="{{ $kemajuan->id_kemajuan }}" {{ $detailKemajuan->id_kemajuan ==
+                                            $kemajuan->id_kemajuan ? 'selected' : '' }}>
+                                            {{ $kemajuan->id_kemajuan }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bab">Bab</label>
+                                    <select class="form-control" id="id_bab" name="id_bab" required>
+                                        <option value=""></option>
+                                        @foreach ($babs as $bab)
+                                        <option value="{{ $bab->id_bab }}" {{ $detailKemajuan->id_bab ==
+                                            $bab->id_bab ? 'selected' : '' }}>
+                                            {{ $bab->bab }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="keterangan">Deskrisi</label>
+                                    <input type="text" class="form-control" id="keterangan" name="keterangan" required value="{{ $detailKemajuan->keterangan }}">
+                                </div>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                    </form>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -121,7 +136,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/dashboard/logout">Logout</a>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>

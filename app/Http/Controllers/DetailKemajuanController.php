@@ -43,4 +43,16 @@ class DetailKemajuanController extends Controller
             dd($err->errorInfo);
         }
     }
+
+    public function showFormUpdate($id)
+    {
+        $data['kemajuans'] = Kemajuan::all();
+        $data['babs'] = Bab::all();
+        $data['detailKemajuan'] = DetailKemajuan::where('id_detail_kemajuan', $id)->first();
+        if ($data['detailKemajuan'] == null) {
+            return redirect("dashboard/detailKemajuan");
+        }
+
+        return view("dashboard/updateDetailKemajuan", $data);
+    }
 }
