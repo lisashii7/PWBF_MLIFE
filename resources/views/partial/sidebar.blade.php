@@ -36,6 +36,13 @@
                     <span>Kemajuan</span></a>
             </li>
 
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/detailKemajuan">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Detail Kemajuan</span></a>
+            </li>
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="/dashboard/pengurus">

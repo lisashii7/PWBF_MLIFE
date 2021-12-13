@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\SantriController;
 use App\Http\Controllers\Dashboard\BukuController;
 use App\Http\Controllers\Dashboard\PengurusController;
 use App\Http\Controllers\Dashboard\LoginController;
+use App\Http\Controllers\DetailKemajuanController;
 use App\Http\Controllers\KemajuanController;
 use App\Models\Kemajuan;
 
@@ -78,6 +79,13 @@ Route::post('/dashboard/kemajuan/tambah', [KemajuanController::class, 'tambah'])
 Route::get('/dashboard/kemajuan/form/{id}', [KemajuanController::class, 'showFormUpdate']);
 Route::post('/dashboard/kemajuan/update/{id}', [KemajuanController::class, 'update']);
 Route::get('/dashboard/kemajuan/hapus/{id}', [KemajuanController::class, 'hapus']);
+
+Route::get('/dashboard/detailKemajuan', [DetailKemajuanController::class, 'index']);
+Route::get('/dashboard/detailKemajuan/form', [DetailKemajuanController::class, 'showFormTambah']);
+Route::post('/dashboard/detailKemajuan/tambah', [DetailKemajuanController::class, 'tambah']);
+Route::get('/dashboard/detailKemajuan/form/{id}', [DetailKemajuanController::class, 'showFormUpdate']);
+Route::post('/dashboard/detailKemajuan/update/{id}', [DetailKemajuanController::class, 'update']);
+Route::get('/dashboard/detailKemajuan/hapus/{id}', [DetailKemajuanController::class, 'hapus']);
 
 Route::get('/dashboard/buku',[BukuController::class,'index']);
 Route::get('/dashboard/buku/hapus/{id}',[BukuController::class,'hapus']);
