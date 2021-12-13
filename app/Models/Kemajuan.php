@@ -19,4 +19,8 @@ class Kemajuan extends Model
     public function pengurus() {
         return $this->belongsTo(Pengurus::class, 'id_pengurus', 'id_pengurus');
     }
+
+    public function detail_kemajuan() {
+        return $this->hasMany(DetailKemajuan::class, 'id_kemajuan', 'id_kemajuan');
+    }
 }

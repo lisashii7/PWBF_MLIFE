@@ -11,4 +11,9 @@ class Bab extends Model
 
     protected $table = "bab";
     protected $primaryKey = "id_bab";
+
+    public function buku()
+    {
+        return $this->belongsTo(Buku::class, 'id_buku', 'id_buku');
+    }
 }
