@@ -17,7 +17,7 @@
     <title>TPQ Digital</title>
   </head>
   <body>
-    
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -34,6 +34,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/santri">Santri</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/kemajuan">Kemajuan</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/pengurus">Pengurus</a>
