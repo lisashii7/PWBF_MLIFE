@@ -31,6 +31,7 @@ class SantriController extends Controller
     public function hapus($id_santri){
         Santri::find($id_santri)->delete();
         return redirect('/dashboard');
+
     }
 
     public function tambah(Request $request){

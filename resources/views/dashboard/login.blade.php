@@ -15,13 +15,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
-    <title>TPQ Digital</title>
+    <title>TPQ AT-TAQWA</title>
   </head>
      <!-- navbar -->
      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="#">
-              <h3>TPQ Digital</h3>
+              <h3>TPQ AT-TAQWA</h3>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -113,7 +113,7 @@ span.psw {
 
 body{
     height: 100vh;
-    background-image: url(https://dosenit.com/wp-content/uploads/2020/10/Gunung-Fuji-Jepang-1024x640-1.jpg);
+    background-image: url(https://image.freepik.com/free-photo/minaret-with-clouds-background_1353-202.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -122,11 +122,12 @@ body{
 </head>
 <body>
 
-<h2 style="text-align: center">Login Form</h2>
+
 
 <form method="POST" action="/dashboard/login/authenticate">
 @csrf
   <div class="container">
+    <h2 style="text-align: center">Login Form</h2>
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="email" required>
 

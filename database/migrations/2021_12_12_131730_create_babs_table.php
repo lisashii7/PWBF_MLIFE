@@ -21,6 +21,7 @@ class CreateBabsTable extends Migration
             $table->text('keterangan');
             $table->foreign('id_buku')->references('id_buku')->on('buku');
             $table->timestamps();
+            
         });
     }
 

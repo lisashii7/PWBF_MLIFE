@@ -3,10 +3,10 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <i class='fas fa-mosque' style='font-size:36px'></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"><p>TPQ DIGITAL</p></div>
+                <div class="sidebar-brand-text "><p>TPQ AT-TAQWA</p></div>
             </a>
 
             <!-- Divider -->

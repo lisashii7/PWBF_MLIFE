@@ -18,7 +18,7 @@
     integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
     crossorigin="anonymous" />
 
-  <title>TPQ Digital</title>
+  <title>TPQ AT-TAQWA</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <h3>TPQ Digital</h3>
+        <h3>TPQ AT-TAQWA</h3>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,9 +35,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
@@ -54,8 +51,6 @@
             <a class="nav-link" href="/buku">Buku</a>
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
-          <li class="nav-item">
-            <a class="nav-link" href="/register">Registration</a>
 
           </li>
         </ul>
@@ -72,7 +67,7 @@
           Belajar di TPQ dengan modern
         </h1>
         <p>
-          TPQ Digital merupakan website yang digunakan untuk mencatat semua aktivitas kemajuan santri
+          TPQ AT-TAQWA merupakan website yang digunakan untuk mencatat semua aktivitas kemajuan santri
         </p>
       </section>
       <section class="col-lg-6">
@@ -86,9 +81,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 mt-5 text-center">
-          <h5><span class="circle-trafalgar text-center">T</span> Digital</h5>
-          <p class="mt-3">TPQ Digital by alisa dan febry</p>
-          <p>TPQ Digital 2021. All rights reserved</p>
+          <h5><span class="circle-trafalgar text-center">T</span> AT-TAQWA</h5>
+          <p class="mt-3">TPQ AT-TAQWA by alisa dan febry</p>
+          <p>TPQ AT-TAQWA 2021. All rights reserved</p>
         </div>
       </div>
     </div>
