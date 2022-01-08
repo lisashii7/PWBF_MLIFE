@@ -19,7 +19,7 @@ class CreateBabsTable extends Migration
             $table->string('bab', '50');
             $table->string('judul', '100');
             $table->text('keterangan');
-            $table->foreign('id_buku')->references('id_buku')->on('buku');
+            $table->foreign('id_buku')->references('id_buku')->on('buku')->onDelete('cascade');
             $table->timestamps();
             
         });

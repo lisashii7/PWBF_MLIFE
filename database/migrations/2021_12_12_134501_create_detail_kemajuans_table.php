@@ -18,8 +18,8 @@ class CreateDetailKemajuansTable extends Migration
             $table->unsignedBigInteger('id_kemajuan');
             $table->unsignedBigInteger('id_bab');
             $table->text('keterangan');
-            $table->foreign('id_kemajuan')->references('id_kemajuan')->on('kemajuan');
-            $table->foreign('id_bab')->references('id_bab')->on('bab');
+            $table->foreign('id_kemajuan')->references('id_kemajuan')->on('kemajuan')->onDelete('cascade');
+            $table->foreign('id_bab')->references('id_bab')->on('bab')->onDelete('cascade');
             $table->timestamps();
         });
     }
